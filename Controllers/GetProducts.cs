@@ -24,10 +24,8 @@ namespace WebApiCQRS.Controllers
             {
                 //Instancia de la DB
                 private readonly ApplicationDbContext _db;
-                public QueryHandler(ApplicationDbContext db)
-                {
-                    this._db = db;
-                }
+                public QueryHandler(ApplicationDbContext db) => this._db = db;                   
+                
                 public async Task<IEnumerable<Product>> Handle(Query request, CancellationToken cancellationToken)
                 {
                     //Usando el DbContext lo usamos para recuperar los Productos de la DB
